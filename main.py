@@ -1,13 +1,13 @@
 from random import *
 
-class cat:
+class Cat:#Main class
 
-  def __init__(self, name):
-    self.name = name
-    self.gladness = 100
-    self.progress = 0
-    self.money = 10
-    self.alive = True
+  def __init__(self, name):#Сonstructor
+    self.name = name#Cat name
+    self.gladness = 100#Cat gladness aka mood
+    self.progress = 0#Cat age?
+    self.money = 10#Does cats have money!?
+    self.alive = True#Is cat alive
 
   def say_hello(self):
     print('Hello!')
@@ -45,7 +45,7 @@ class cat:
       print('Nice! Best Progress!')
       self.alive = False
 
-  def statics(self):
+  def statistics(self):
     print('Gladness: ', self.gladness, 'Progress: ', self.progress, 'Money: ', self.money)
 
   def live(self, day):
@@ -60,12 +60,15 @@ class cat:
       self.to_chill()
     elif live_cube == 4:
       self.say_hello()
-    self.statics()
+    self.statistics()#Print cat statistics
     self.is_alive()
 
+cats_names = ['Marta','Bagheera','Mittens','Clyde']#Random cat names
 
-marta = cat('marta')
+cute_cat = Cat(str(choice(cats_names)))
+
 for day in range(365):
-	if marta.alive == False:
+	if cute_cat.alive == False:
 		break
-	marta.live(day)
+	cute_cat.live(day)
+	input('Press enter to next day!')
